@@ -1,0 +1,381 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(18, 18, 18, 0.95); /* Semi-transparent dark */
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    backdrop-filter: blur(10px); /* Blurs content behind the bar */
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #00ffcc;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00ffcc; /* Matches your accent color */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* header */
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('studio-bg.jpg');
+    background-size: cover;
+}
+
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #1a1a1a; /* Subtle dark grey background */
+}
+
+.profile-photo {
+    width: 180px;      /* Adjust size as needed */
+    height: 180px;     /* Must match width for a perfect circle */
+    border-radius: 50%; /* This makes it a circle */
+    object-fit: cover;  /* Prevents the image from stretching */
+    border: 3px solid #00ffcc; /* Adds a colored ring around your photo */
+    margin-bottom: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+header p {
+    color: #888;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* Portfolio Grid */
+.portfolio {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.track-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.track-card {
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.track-card:hover {
+    transform: scale(1.02);
+}
+
+
+
+/* Container for each track and its text */
+.track-item {
+    margin-bottom: 40px; /* Space between different tracks */
+}
+
+/* Main title caption */
+.track-caption {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Genre tag styling */
+.genre {
+    color: #00ffcc; /* Your accent color */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-left: 10px;
+}
+
+/* Smaller details text below the player */
+.track-subtext {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Ensure the grid stays neat */
+.track-grid {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+
+.contact-section {
+    padding: 80px 20px;
+    background-color: #121212;
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.contact-image img {
+    width: 300px;      /* Size of the contact photo */
+    height: 400px;
+    object-fit: cover; /* Keeps your face from looking stretched */
+    border-radius: 10px;
+    filter: grayscale(20%); /* Optional: gives it a moody producer vibe */
+}
+
+.contact-content {
+    flex: 1;
+}
+
+.contact-content h2 {
+    font-size: 2.5rem;
+    color: #00ffcc;
+    margin-top: 0;
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-links li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Mobile Responsive: Stack the image and text */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-image img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+}
+
+/* Sections & Footer */
+.about {
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #000;
+}
+
+a {
+    color: #00ffcc; /* Accent color */
+    text-decoration: none;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">PN</div> <!-- Your initials or a small logo -->
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#discography">Discography</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Add IDs to your sections so the links know where to go -->
+
+    
+
+<header id="home">
+    <!-- Replace 'profile.jpg' with your actual filename -->
+    <img src="h.png" alt="Producer Name" class="profile-photo">
+    <h1>CJC RECORDS</h1>
+    <p>I am CJ Cebuala, a freelance music producer and musician from San Francisco, Agsur.
+        <br> <br>This is my portfolio.
+    </p>
+</header>
+
+
+
+    <main>
+
+          <section id="about" class="about">
+            <h2>Music Production</h2>
+            <p>One of my favorite musical activities is Music Producing for various bands and artists : 
+                recording, mixing and mastering.
+            </p>
+            <p>I work in a range of genres including, rock, reggae, alternative, pop, blues, lofi. </p>
+            <p>At the moment, I have been working for recording, mixing, mastering almost all tracks by the biggest 
+                San Francisco independent label "Bag-ong Duyog" based in Agusan del Sur.
+            </p>
+            <p>
+                Currently I work as a freelance music producer, recording at Parsonage Recordings and Room 416 studio
+                in San Francisco(where I recorded the "Bag-ong Duyog" Album); mixing and mastering at my home studio.
+                I will be gladly contacted for mixing / mastering jobs.
+            </p>
+        </section>
+
+
+       <section id="discography" class="portfolio">
+    <h2>These are some of the projects I’ve participated in so far:</h2>
+    
+    <div class="track-grid">
+        
+        <!-- Track 1 -->
+        <div class="track-item">
+            <h3 class="track-caption">Alive In This Moment - <span class="genre">Acoustic Cover</span></h3>
+            <div class="track-card">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A981420463&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/alive-in-this-moment-c-starfield-acousticcover" title="Alive In This Moment (c) Starfield | The Talmids (Acoustic Cover)" target="_blank" style="color: #cccccc; text-decoration: none;">Alive In This Moment (c) Starfield | The Talmids (Acoustic Cover)</a></div></iframe>
+            </div>
+            <p class="track-subtext">Produced, Mixed, and Mastered by CJ Cebuala</p>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="track-item">
+            <h3 class="track-caption">Every Little Thing - <span class="genre">Acoustic Cover</span></h3>
+            <div class="track-card">
+               <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1590542303&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/every-little-thing-screams-from-south-acousticcovers" title="Every Little Thing | Screams From South #AcousticCovers" target="_blank" style="color: #cccccc; text-decoration: none;">Every Little Thing | Screams From South #AcousticCovers</a></div></iframe>
+            </div>
+            <p class="track-subtext">Co-produced with Artist Name</p>
+        </div>
+
+         <!-- Track 2 -->
+        <div class="track-item">
+            <h3 class="track-caption">Alay (Original) - <span class="genre">Alternative Rock</span></h3>
+            <div class="track-card">
+              <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2043279236&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/alay-original" title="Alay (Original)" target="_blank" style="color: #cccccc; text-decoration: none;">Alay (Original)</a></div></iframe>
+            </div>
+            <p class="track-subtext">Produced, Mixed & Mastered by CJ Cebuala</p>
+        </div>
+
+
+    </div>
+</section>
+
+
+     
+    </main>
+
+
+    <section id="contact" class="contact-section">
+    <div class="contact-container">
+        
+        <!-- The Contact Photo -->
+        <div class="contact-image">
+            <img src="contact.jpg" alt="Work with me">
+        </div>
+
+        <!-- The Contact Info -->
+        <div class="contact-content">
+            <h2>Let's Work</h2>
+            <p>Thanks for looking at my portfolio! I will be happy to be contacted for job opportunities or concerts</p>
+            <ul class="contact-links">
+                <li>Email: <a href="mailto:your@email.com">your@email.com</a></li>
+                <li>IG: <a href="#">@yourhandle</a></li>
+                <li>Twitter: <a href="#">@yourhandle</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+    <footer id="contact">
+        <p>Contact: your@email.com</p>
+        <div class="socials">
+            <a href="#">Instagram</a> | <a href="#">YouTube</a>
+        </div>
+    </footer>
+
+</body>
+</html>
