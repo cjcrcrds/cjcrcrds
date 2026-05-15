@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producer Portfolio</title>
+    <title>CJC RECORDS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,14 +12,45 @@
 
     <nav class="navbar">
     <div class="nav-container">
-        <div class="logo">PN</div> <!-- Your initials or a small logo -->
+        
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#discography">Discography</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div id="datetime"></div>
     </div>
 </nav>
+
+
+
+<script>
+function updateClock() {
+    const now = new Date();
+    
+    // Format the date and time strings
+    const options = { 
+        weekday: 'short', 
+        month: 'short', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+    };
+    
+    const timeString = now.toLocaleDateString('en-US', options);
+    
+    // Inject it into the element
+    document.getElementById('datetime').textContent = timeString;
+}
+
+// Update the clock every 1 second
+setInterval(updateClock, 1000);
+
+// Run once immediately so it doesn't wait 1 second to appear
+updateClock();
+
+    </script>
 
 <!-- Add IDs to your sections so the links know where to go -->
 
@@ -36,10 +67,21 @@
 
 
 
-    <main>
 
-          <section id="about" class="about">
-            <h2>Music Production</h2>
+
+
+
+    <main>
+<section class="about-section" id="ab out">
+  <div class="about-container">
+    <!-- Left Side: Photo -->
+    <div class="about-image">
+      <img src="about.jpg" alt="Your Name - Portfolios">
+    </div>
+
+    <!-- Right Side: Text Content -->
+    <div class="about-text">
+      <h2>Music Production</h2>
             <p>One of my favorite musical activities is Music Producing for various bands and artists : 
                 recording, mixing and mastering.
             </p>
@@ -52,7 +94,10 @@
                 in San Francisco(where I recorded the "Bag-ong Duyog" Album); mixing and mastering at my home studio.
                 I will be gladly contacted for mixing / mastering jobs.
             </p>
-        </section>
+    </div>
+  </div>
+</section>
+          
 
 
        <section id="discography" class="portfolio">
@@ -60,32 +105,194 @@
     
     <div class="track-grid">
         
-        <!-- Track 1 -->
-        <div class="track-item">
-            <h3 class="track-caption">Alive In This Moment - <span class="genre">Acoustic Cover</span></h3>
-            <div class="track-card">
-                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A981420463&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/alive-in-this-moment-c-starfield-acousticcover" title="Alive In This Moment (c) Starfield | The Talmids (Acoustic Cover)" target="_blank" style="color: #cccccc; text-decoration: none;">Alive In This Moment (c) Starfield | The Talmids (Acoustic Cover)</a></div></iframe>
-            </div>
-            <p class="track-subtext">Produced, Mixed, and Mastered by CJ Cebuala</p>
-        </div>
 
-        <!-- Track 2 -->
-        <div class="track-item">
-            <h3 class="track-caption">Every Little Thing - <span class="genre">Acoustic Cover</span></h3>
-            <div class="track-card">
-               <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1590542303&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/every-little-thing-screams-from-south-acousticcovers" title="Every Little Thing | Screams From South #AcousticCovers" target="_blank" style="color: #cccccc; text-decoration: none;">Every Little Thing | Screams From South #AcousticCovers</a></div></iframe>
-            </div>
-            <p class="track-subtext">Co-produced with Artist Name</p>
-        </div>
-
-         <!-- Track 2 -->
-        <div class="track-item">
-            <h3 class="track-caption">Alay (Original) - <span class="genre">Alternative Rock</span></h3>
-            <div class="track-card">
+  <!-- Track Item 1 -->
+  
+   <div class="track-item">
+   <span class="genre">Alternative Rock</span>
+  <div class="track-card">
+    <div class="track-card">
               <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2043279236&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/alay-original" title="Alay (Original)" target="_blank" style="color: #cccccc; text-decoration: none;">Alay (Original)</a></div></iframe>
             </div>
-            <p class="track-subtext">Produced, Mixed & Mastered by CJ Cebuala</p>
-        </div>
+    <div class="track-info">
+      <h3>Alay</h3>
+      <p class="artist">Talmids</p>
+      <div class="description">
+        This track marks the debut single from my Christian band, Talmids (formerly known as Pleroma). This track is part of the first Bag-ong Duyog album and is available to stream everywhere now.
+      </div>
+    </div>   
+  </div>
+  <p class="track-subtext">Produced, Mixed & Mastered by CJ Cebuala</p>
+  </div>
+
+  <!-- Add more track-cards as needed -->
+</div>
+</div>
+
+
+
+ <!-- Track Item 2 -->
+  
+   <div class="track-item">
+   <span class="genre">Pop/Folk Rock</span>
+  <div class="track-card">
+    <div class="track-card">
+             <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2320614812&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/sa-bagong-panahon-original" title="Sa Bagong Panahon (Original)" target="_blank" style="color: #cccccc; text-decoration: none;">Sa Bagong Panahon (Original)</a></div></iframe>
+            </div>
+    <div class="track-info">
+      <h3>Sa Bagong Panahon</h3>
+      <p class="artist">Friyad</p>
+      <div class="description">
+       This track is the debut single from my project band, Friyad. Originally entered in the 2021 Friedrich Naumann Foundation Philippines songwriting competition, it proudly took home the People’s Choice Award . I am excited to announce that it will finally be available on all major streaming platforms soon.
+      </div>
+    </div>   
+  </div>
+  <p class="track-subtext">Produced, Mixed & Mastered by CJ Cebuala and Rojh Baquiran of the North Hit Project</p>
+  </div>
+
+  <!-- Add more track-cards as needed -->
+</div>
+</div>
+
+
+
+<!-- Track Item 3 -->
+  
+   <div class="track-item">
+   <span class="genre">Alternative Rock</span>
+  <div class="track-card">
+    <div class="track-card">
+             <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2321020331&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/kagawasan-original" title="Kagawasan (Original)" target="_blank" style="color: #cccccc; text-decoration: none;">Kagawasan (Original)</a></div>
+</iframe>
+            </div>
+    <div class="track-info">
+      <h3>Kagawasan</h3>
+      <p class="artist">Friyad</p>
+      <div class="description">
+         Second single from my Band Friyad (my project band). Remastered version arriving this fall.
+      </div>
+    </div>   
+  </div>
+  <p class="track-subtext">Produced, Mixed & Mastered by CJ Cebuala</p>
+  </div>
+
+  <!-- Add more track-cards as needed -->
+</div>
+</div>
+
+
+
+
+
+
+<!-- Track Item 4 -->
+  
+   <div class="track-item">
+   <span class="genre">Folk Rock</span>
+  <div class="track-card">
+    <div class="track-card">
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2321214809&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/magdiwata" title="Magdiwa Ta, Magdiwata!" target="_blank" style="color: #cccccc; text-decoration: none;">Magdiwa Ta, Magdiwata!</a></div>
+</iframe>
+            </div>
+    <div class="track-info">
+      <h3>Magdiwa ta, Magdiwata!</h3>
+      <p class="artist">Jomari Kevin Adlao Ft. Eunice Luarez</p>
+      <div class="description">
+         This is the debut arrangement of the Official Magdiwata Festival Theme Song, a project from my early days as a producer. While a new version of the theme currently exists, this original collaboration between Jomari Kevin Adlao, Eunice Luarez, and the LGU band remains a personal milestone. I look forward to releasing a remastered version soon.
+      </div>
+    </div>   
+  </div>
+  <p class="track-subtext">Produced, Mixed & Mastered by CJ Cebuala</p>
+  </div>
+
+  <!-- Add more track-cards as needed -->
+</div>
+</div>
+
+
+
+<!-- Track Item 5 -->
+  
+   <div class="track-item">
+   <span class="genre">Folk/Pop Rock</span>
+  <div class="track-card">
+    <div class="track-card">
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2321223971&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/you-dont-have-far-to-go-to-go" title="Here at SOCOTECH (Raw Version)" target="_blank" style="color: #cccccc; text-decoration: none;">Here at SOCOTECH (Raw Version)</a></div>
+</iframe>
+            </div>
+    <div class="track-info">
+      <h3>Here at SOCOTECH</h3>
+      <p class="artist">SOCOTECH BAND</p>
+      <div class="description">
+         The official Socotech Jingle (written by Eugene Padino). I’m featured on vocals here, backed by the Socotech Band. This was actually meant to be just a 'raw' demo, but it ended up being chosen as the official recording for the organization. Sometimes the first take is the one!
+      </div>
+    </div>   
+  </div>
+  <p class="track-subtext">Produced, Mixed & Mastered by CJ Cebuala at Room 416</p>
+  </div>
+
+  <!-- Add more track-cards as needed -->
+</div>
+</div>
+
+
+
+
+
+<!-- Track Item 6 -->
+  
+   <div class="track-item">
+   <span class="genre">Pop Rock</span>
+  <div class="track-card">
+    <div class="track-card">
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2321242712&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/dakila-original" title="Dakila (Original)" target="_blank" style="color: #cccccc; text-decoration: none;">Dakila (Original)</a></div>
+</iframe>
+            </div>
+    <div class="track-info">
+      <h3>Dakila</h3>
+      <p class="artist">Friyad</p>
+      <div class="description">
+         An unreleased gem from the archives: the first-ever recording from Friyad, dating back to 2020. Composed by lead vocalist Ariel Sumbilon for a songwriting contest, this track marks the beginning of our journey as a band. It’s been under wraps for too long. Goal for this year: finally get this out to your ears!
+      </div>
+    </div>   
+  </div>
+  <p class="track-subtext">Produced, Mixed & Mastered by CJ Cebuala</p>
+  </div>
+
+  <!-- Add more track-cards as needed -->
+</div>
+</div>
+
+
+
+
+
+<!-- Track Item 7 -->
+  
+   <div class="track-item">
+   <span class="genre">Blues Rock Fusion</span>
+  <div class="track-card">
+    <div class="track-card">
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2321262278&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/parsonagerecordings" title="Parsonage Recordings" target="_blank" style="color: #cccccc; text-decoration: none;">Parsonage Recordings</a> · <a href="https://soundcloud.com/parsonagerecordings/selene" title="Selene" target="_blank" style="color: #cccccc; text-decoration: none;">Selene</a></div>
+</iframe>
+            </div>
+    <div class="track-info">
+      <h3>Selene</h3>
+      <p class="artist">Friyad</p>
+      <div class="description">
+         Friyad’s third single: a bluesy-rock-pop fusion written by Ariel Sumbilon. 🎸 We tracked this one back in 2021, and it’s officially out and available on all streaming platforms. Check it out!  
+      </div>
+    </div>   
+  </div>
+  <p class="track-subtext">Produced, Mixed & Mastered by CJ Cebuala</p>
+  </div>
+
+  <!-- Add more track-cards as needed -->
+</div>
+</div>
+
+
+
 
 
     </div>
@@ -107,23 +314,66 @@
         <!-- The Contact Info -->
         <div class="contact-content">
             <h2>Let's Work</h2>
-            <p>Thanks for looking at my portfolio! I will be happy to be contacted for job opportunities or concerts</p>
+            <p>Thanks for looking at my portfolio! I will be happy to be contacted for job opportunities or gigs.</p>
             <ul class="contact-links">
-                <li>Email: <a href="mailto:your@email.com">your@email.com</a></li>
-                <li>IG: <a href="#">@yourhandle</a></li>
-                <li>Twitter: <a href="#">@yourhandle</a></li>
+                <li>You can watch & listen to my music on <a href="https://www.youtube.com/@CJCRCRDS" target="_blank" rel="noopener noreferrer">YouTube</a> & <a href="https://www.tiktok.com/@cjcrcrds" target="_blank" rel="noopener noreferrer">TikTok</a>.</li>
+                <li>or visit my <a href="https://www.instagram.com/cjcrcrds/" target="_blank" rel="noopener noreferrer">Instagram</a>.</li>
+                <li>And in any case, this is my <a href="https://www.facebook.com/CebualaCJanuary/" target="_blank" rel="noopener noreferrer">Facebook</a>.</li>
             </ul>
         </div>
 
     </div>
 </section>
 
-    <footer id="contact">
-        <p>Contact: your@email.com</p>
-        <div class="socials">
-            <a href="#">Instagram</a> | <a href="#">YouTube</a>
-        </div>
-    </footer>
+    <footer class="aesthetic-footer">
+  <div class="footer-grid">
+    <!-- Column 1: Sitemap -->
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="sitemap">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#discography">Discography</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2: Contact & Search -->
+    <div class="footer-col">
+      <h4>Contact Me</h4>
+      <p class="contact-info">cjcrcrds2021@gmail.com</p>
+      <div class="footer-search">
+        <input type="text" placeholder="Search portfolio...">
+        <button type="submit">🔍</button>
+      </div>
+    </div>
+
+    <!-- Column 3: Trust Signals -->
+    <div class="footer-col trust-signals">
+      <h4>Verified</h4>
+      <div class="badge-row">
+        <span>SAFRAMUCA Member</span>
+        <span>Verified OAC</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="footer-divider">
+
+  <div class="footer-bottom">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/cjcrcrds/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/CebualaCJanuary/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://soundcloud.com/parsonagerecordings/" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+      <a href="https://www.youtube.com/@CJCRCRDS" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.tiktok.com/@cjcrcrds" target="_blank" rel="noopener noreferrer">Tiktok</a>
+    </div>
+
+    <p class="copyright">&copy; 2026 CJ Cebuala. All Rights Reserved.</p>
+
+    <a href="#top" class="back-to-top">Back to top ↑</a>
+  </div>
+</footer>
 
 </body>
 </html>
