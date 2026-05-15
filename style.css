@@ -27,12 +27,7 @@ body {
     padding: 0 20px;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #00ffcc;
-    letter-spacing: 2px;
-}
+
 
 .nav-links {
     list-style: none;
@@ -55,6 +50,11 @@ body {
     color: #00ffcc; /* Matches your accent color */
 }
 
+#datetime {
+  font-family: monospace;
+  font-size: 1rem;
+}
+
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
@@ -65,8 +65,19 @@ html {
 header {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('studio-bg.jpg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('header.jpg');
     background-size: cover;
+    height : 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* 4. Center the text inside the header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    
 }
 
 header {
@@ -76,13 +87,11 @@ header {
 }
 
 .profile-photo {
-    width: 180px;      /* Adjust size as needed */
-    height: 180px;     /* Must match width for a perfect circle */
-    border-radius: 50%; /* This makes it a circle */
-    object-fit: cover;  /* Prevents the image from stretching */
-    border: 3px solid #00ffcc; /* Adds a colored ring around your photo */
-    margin-bottom: 20px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  /* The shape is defined here */
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 h1 {
@@ -107,6 +116,56 @@ h1 {
 
 
 
+
+
+
+
+
+
+/*about */
+
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+  gap: 60px; /* Space between the photo and text */
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px; /* Aesthetic rounded corners */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Soft shadow for depth */
+  object-fit: cover;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.about-text p {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Mobile Responsive: Stacks the photo on top of the text */
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+}
+
+
+
 /* Portfolio Grid */
 .portfolio {
     max-width: 900px;
@@ -114,37 +173,7 @@ h1 {
     padding: 0 20px;
 }
 
-.track-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
-.track-card {
-    background: #1e1e1e;
-    padding: 10px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.track-card:hover {
-    transform: scale(1.02);
-}
-
-
-
-/* Container for each track and its text */
-.track-item {
-    margin-bottom: 40px; /* Space between different tracks */
-}
-
-/* Main title caption */
-.track-caption {
-    font-size: 1.2rem;
-    color: #fff;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
 
 /* Genre tag styling */
 .genre {
@@ -163,13 +192,112 @@ h1 {
     font-style: italic;
 }
 
-/* Ensure the grid stays neat */
-.track-grid {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
-    margin: 0 auto;
+
+
+
+
+
+
+
+
+.music-grid {
+  display: grid;
+  /* Automatically fits as many cards as possible, minimum 280px wide */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+.track-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.track-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.art-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.art-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.track-card:hover .play-overlay {
+  opacity: 1;
+}
+
+.track-info {
+  padding: 20px;
+}
+
+.track-info h3 {
+  margin: 0 0 4px 0;
+  color: var(--text-main);
+  font-size: 1.2rem;
+}
+
+.artist {
+  color: var(--accent);
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.description {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 12px;
+}
+
+
+/* spotify */
+
+
+.spotify-container {
+  max-width: 700px; /* Limits the width for a cleaner look */
+  margin: 40px auto; /* Centers the player */
+  padding: 0 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Subtle hover effect to match your other aesthetic elements */
+.spotify-container:hover {
+  transform: scale(1.02);
+}
+
+
+
+
+
 
 
 
@@ -240,13 +368,212 @@ h1 {
     padding: 20px;
 }
 
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #000;
+.aesthetic-footer {
+  background-color: #111;
+  color: #888;
+  padding: 80px 10% 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
 }
 
-a {
-    color: #00ffcc; /* Accent color */
-    text-decoration: none;
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-col h4 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+}
+
+.sitemap {
+  list-style: none;
+  padding: 0;
+}
+
+.sitemap li { margin-bottom: 10px; }
+
+.sitemap a {
+  text-decoration: none;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.sitemap a:hover { color: #fff; }
+
+/* Search Bar Styling */
+.footer-search {
+  display: flex;
+  background: #222;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 15px;
+}
+
+.footer-search input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  outline: none;
+  width: 100%;
+}
+
+.footer-search button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Trust Signals */
+.badge-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.footer-divider {
+  border: 0;
+  border-top: 1px solid #222;
+  margin-bottom: 30px;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.social-icons a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.back-to-top {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+}
+
+.aesthetic-footer {
+  background-color: #111;
+  color: #888;
+  padding: 80px 10% 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-col h4 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+}
+
+.sitemap {
+  list-style: none;
+  padding: 0;
+}
+
+.sitemap li { margin-bottom: 10px; }
+
+.sitemap a {
+  text-decoration: none;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.sitemap a:hover { color: #fff; }
+
+/* Search Bar Styling */
+.footer-search {
+  display: flex;
+  background: #222;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 15px;
+}
+
+.footer-search input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  outline: none;
+  width: 100%;
+}
+
+.footer-search button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Trust Signals */
+.badge-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.footer-divider {
+  border: 0;
+  border-top: 1px solid #222;
+  margin-bottom: 30px;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.social-icons a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.back-to-top {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
 }
