@@ -8,47 +8,132 @@ body {
 }
 
 /* Navigation Bar */
+
+
+
+
+
+
+/* Base styles and Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Navbar Container */
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: rgba(18, 18, 18, 0.95); /* Semi-transparent dark */
-    padding: 15px 0;
-    border-bottom: 1px solid #333;
-    backdrop-filter: blur(10px); /* Blurs content behind the bar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 30px;
+  color: white;
 }
 
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+.logo {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-
-
+/* Desktop Navigation Links */
 .nav-links {
-    list-style: none;
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+.nav-links li a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* Hide Checkbox and Hamburger Icon on Desktop */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+/* The three bars of the hamburger icon */
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* ===================================================
+   Mobile View (Screens 768px wide or smaller)
+   =================================================== */
+@media (max-width: 768px) {
+  /* Show the hamburger icon */
+  .hamburger {
     display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+  }
+
+  /* Position the menu off-screen by default (hidden) */
+  .nav-links {
+    position: absolute;
+    top: 60px; /* Adjust based on navbar height */
+    right: -100%; /* Hides the menu to the right */
+    width: 200px;
+    height: calc(100vh - 60px);
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    transition: right 0.3s ease; /* Smooth slide-in effect */
+    box-shadow: -5px 5px 10px rgba(0,0,0,0.3);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* THE MAGIC: When the hidden checkbox is checked, 
+     target the adjacent .nav-links and slide it into view */
+  .menu-toggle:checked ~ .nav-links {
+    right: 0;
+  }
+
+  /* OPTIONAL: Turn the hamburger icon into an 'X' when open */
+  .menu-toggle:checked ~ .hamburger .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-toggle:checked ~ .hamburger .bar:nth-child(2) {
+    opacity: 0; /* Hide middle bar */
+  }
+  .menu-toggle:checked ~ .hamburger .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
 
-.nav-links a:hover {
-    color: #00ffcc; /* Matches your accent color */
-}
+
+
+
+
+
+
+
 
 #datetime {
   font-family: monospace;
@@ -200,6 +285,10 @@ h1 {
 
 
 
+
+
+
+
 .music-grid {
   display: grid;
   /* Automatically fits as many cards as possible, minimum 280px wide */
@@ -295,6 +384,54 @@ h1 {
 }
 
 
+
+
+/* ==============================================
+   Pagination Styles (Under the Grid)
+   ============================================== */
+.pagination-container {
+  display: flex;
+  justify-content: center; /* Centers the page numbers horizontally */
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 8px; /* Space between individual page buttons */
+}
+
+.pagination li a {
+  display: block;
+  padding: 10px 16px;
+  color: #fff;
+  background-color: #2a2a2a;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover effect for numbers/arrows */
+.pagination li a:hover {
+  background-color: #444;
+}
+
+/* Active Page State (The page the user is currently on) */
+.pagination li a.active {
+  background-color: #ff5722; /* Use your website's accent color here */
+  color: #fff;
+  font-weight: bold;
+  pointer-events: none; /* Disables clicking the already active page */
+}
+
+/* Slightly different styling for Prev/Next buttons if desired */
+.pagination li a.page-arrow {
+  background-color: #333;
+}
 
 
 
